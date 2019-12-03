@@ -8,6 +8,13 @@ $(function() {
     'text-align': 'center'
   });
 
+
+  for (var i = 0; i < images.length; i++) {
+    var li = "<li class='pagerButtons'><button onclick='goToPage(" + i + ")'>" + (i + 1) + "</button></li>";
+    $('.pagerList').append(li);
+  }
+
+
   $('#i1').width('49.5vw');
   imageWidth = $('#i1').width();
   $('#i2').width('49.5vw');
@@ -51,6 +58,14 @@ $(function() {
   });
 
 });
+
+function goToPage(number) {
+  current = number;
+  $('#i1').attr('src', 'images/' + images[current]);
+  $('.images').css('margin-left', '0px');
+  nextImg = (current + 1 + images.length) % images.length;
+  $('#i2').attr('src', 'images/' + images[nextImg]);
+};
 
 function play() {
   $('.images').stop(true, true);

@@ -3,5 +3,12 @@
   margin: auto;
 }
  h2 {
-   text-align: center;  
+   text-align: center;
  }
+
+.pagerButtons {
+  display: inline;
+}
+.pager {
+  text-align: center;
+}
